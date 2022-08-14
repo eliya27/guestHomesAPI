@@ -1,0 +1,3 @@
+
+----I failed to configure login endpoint(done)
+----Check if registration and Login should be on users or auth file then change (done)
