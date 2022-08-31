@@ -13,7 +13,7 @@ import { verifyToken, verifyUser, verifyAdmin } from "../utils/verifyToken.js";
 //create
 router.post("/:hotelID", verifyAdmin, NewRoom);
 //update
-router.put("/update/:id", verifyAdmin, UpdateRoom);
+router.put("/update/:id", UpdateRoom);
 router.put("/availability/:id", UpdateRoomAvailability);
 //delete
 router.delete("/delete/:id/:hotelID", verifyAdmin, DeleteRoom);

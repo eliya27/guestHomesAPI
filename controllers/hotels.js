@@ -52,6 +52,8 @@ export const GetAllHotels = async (req, res, next) => {
       ...others,
       cheapestPrice: { $gt: min || 10000, $lt: max || 200000 },
     }).limit(req.query.limit);
+    res.set("Access-Control-Expose-Headers", "X-Total-Count");
+    res.set("X-Total-Count", "20");
     res.status(200).json(getAllHotel);
   } catch (err) {
     return next(err);
