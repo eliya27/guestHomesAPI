@@ -46,7 +46,7 @@ export const GetHotel = async (req, res) => {
 
 export const GetAllHotels = async (req, res, next) => {
   const { min, max, ...others } = req.query;
-  req.setHeader("X-Total-Count", 20);
+  //req.setHeader("X-Total-Count", 20);
 
   try {
     const getAllHotel = await Hotel.find({
