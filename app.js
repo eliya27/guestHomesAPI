@@ -40,6 +40,7 @@ app.use(BodyParser.urlencoded({ extended: true }));
 
 app.use((res, req, next) => {
   res.headers("X-Total-Count", 10);
+  next();
 });
 
 app.use(function (req, res, next) {
