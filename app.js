@@ -44,10 +44,10 @@ app.use(function (req, res, next) {
   //"https://guesthomesapi.azurewebsites.net/api/"
   // ); update to match the domain you will make the request from
   res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept, X-Total-Count"
+    "Access-Control-Expose-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept, X-Total-Count:10"
   );
-  res.header("X-Total-Count", "10");
+  //res.header("X-Total-Count", "10");
   next();
 });
 
