@@ -38,7 +38,7 @@ app.use(CookieParser());
 app.use(BodyParser.json({ extended: true }));
 app.use(BodyParser.urlencoded({ extended: true }));
 
-app.use((res, req, next) => {
+/*app.use((res, req, next) => {
   res.headers("X-Total-Count", 10);
   next();
 });
@@ -50,7 +50,7 @@ app.use(function (req, res, next) {
     "Origin, X-Requested-With, Content-Type, Accept, X-Total-Count"
   );
   next();
-});
+});*/
 
 app.use("/api/users", usersRoute);
 app.use("/api/users", users_authRoute);
