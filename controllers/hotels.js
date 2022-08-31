@@ -46,6 +46,7 @@ export const GetHotel = async (req, res) => {
 
 export const GetAllHotels = async (req, res, next) => {
   const { min, max, ...others } = req.query;
+  req.setHeader("X-Total-Count", 20);
 
   try {
     const getAllHotel = await Hotel.find({
@@ -56,7 +57,7 @@ export const GetAllHotels = async (req, res, next) => {
     //res.set("X-Total-Count", "20");
     //res.append("X-Total-Count", "20");
     //res.append("Access-Control-Expose-Headers", "X-Total-Count");
-    res.setHeader("X-Total-Count", 20);
+
     res.status(200).json(getAllHotel);
   } catch (err) {
     return next(err);
