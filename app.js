@@ -44,15 +44,11 @@ app.use((res, req, next) => {
 });
 
 app.use(function (req, res, next) {
-  //res.header(
-  // "Access-Control-Allow-Origin",
-  //"https://guesthomesapi.azurewebsites.net/api/"
-  // ); update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Origin", "*");
   res.header(
-    "Access-Control-Expose-Headers",
+    "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept, X-Total-Count"
   );
-  //res.header("X-Total-Count", "10");
   next();
 });
 
