@@ -37,6 +37,19 @@ app.use(cors());
 app.use(CookieParser());
 app.use(BodyParser.json({ extended: true }));
 app.use(BodyParser.urlencoded({ extended: true }));
+
+app.use(function (req, res, next) {
+  res.header(
+    "Access-Control-Allow-Origin",
+    "https://guesthomesapi.azurewebsites.net/api/"
+  ); // update to match the domain you will make the request from
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
+
 app.use("/api/users", usersRoute);
 app.use("/api/users", users_authRoute);
 app.use("/api/hotels", hotelsRoute);
