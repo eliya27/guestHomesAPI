@@ -38,6 +38,10 @@ app.use(CookieParser());
 app.use(BodyParser.json({ extended: true }));
 app.use(BodyParser.urlencoded({ extended: true }));
 
+app.use((res, req, next) => {
+  res.headers("X-Total-Count", 10);
+});
+
 app.use(function (req, res, next) {
   //res.header(
   // "Access-Control-Allow-Origin",
@@ -45,7 +49,7 @@ app.use(function (req, res, next) {
   // ); update to match the domain you will make the request from
   res.header(
     "Access-Control-Expose-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept, X-Total-Count:10"
+    "Origin, X-Requested-With, Content-Type, Accept, X-Total-Count"
   );
   //res.header("X-Total-Count", "10");
   next();
