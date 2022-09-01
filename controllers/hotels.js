@@ -46,7 +46,6 @@ export const GetHotel = async (req, res) => {
 
 export const GetAllHotels = async (req, res, next) => {
   const { min, max, ...others } = req.query;
-  //req.setHeader("X-Total-Count", 20);
 
   try {
     const getAllHotel = await Hotel.find({
@@ -56,11 +55,11 @@ export const GetAllHotels = async (req, res, next) => {
     //res.set("Access-Control-Expose-Headers", "X-Total-Count");
     //res.set("X-Total-Count", "20");
     res.append("X-Total-Count", getAllHotel.length);
-    res.append("Content-Range", 0 - 5 / getAllHotel.length);
+    res.append("Content-Range", 0 - 24 / 319);
     res.append(
       "Access-Control-Expose-Headers",
       "X-Total-Count",
-      Content - Range
+      "Content-Range"
     );
 
     res.status(200).json(getAllHotel);
