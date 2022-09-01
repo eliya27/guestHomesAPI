@@ -56,7 +56,12 @@ export const GetAllHotels = async (req, res, next) => {
     //res.set("Access-Control-Expose-Headers", "X-Total-Count");
     //res.set("X-Total-Count", "20");
     res.append("X-Total-Count", getAllHotel.length);
-    res.append("Access-Control-Expose-Headers", "X-Total-Count");
+    res.append("Content-Range", 0 - 5 / getAllHotel.length);
+    res.append(
+      "Access-Control-Expose-Headers",
+      "X-Total-Count",
+      Content - Range
+    );
 
     res.status(200).json(getAllHotel);
   } catch (err) {
